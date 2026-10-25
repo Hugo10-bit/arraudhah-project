@@ -114,4 +114,35 @@ return [
 
     'password_timeout' => env('AUTH_PASSWORD_TIMEOUT', 10800),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Initial Seed Accounts Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Konfigurasi akun awal yang digunakan oleh AdminSeeder.
+    | Nilai dibaca aman dari environment (.env) dan dapat di-cache (config:cache).
+    |
+    */
+
+    'seed_admin' => [
+        'name'     => env('ADMIN_NAME', 'Admin Ar-Raudhah'),
+        'username' => env('ADMIN_USERNAME', 'admin'),
+        'email'    => env('ADMIN_EMAIL', 'admin@arraudhah.id'),
+        'password' => env('ADMIN_PASSWORD', null),
+    ],
+
+    'seed_penguji_tpq' => [
+        'name'     => env('PENGUJI_TPQ_NAME', 'Ustadz Ahmad Al-Hafidz'),
+        'username' => env('PENGUJI_TPQ_USERNAME', 'penguji_tpq'),
+        'email'    => env('PENGUJI_TPQ_EMAIL', 'ahmad@arraudhah.id'),
+        'password' => env('PENGUJI_TPQ_PASSWORD', null),
+    ],
+
+    'seed_penguji_rtq' => [
+        'name'     => env('PENGUJI_RTQ_NAME', 'Ustadzah Fatimah Az-Zahra'),
+        'username' => env('PENGUJI_RTQ_USERNAME', 'penguji_rtq'),
+        'email'    => env('PENGUJI_RTQ_EMAIL', 'fatimah@arraudhah.id'),
+        'password' => env('PENGUJI_RTQ_PASSWORD', null),
+    ],
+
 ];
