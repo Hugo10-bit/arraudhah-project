@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cetak Massal Surat Kelulusan Database Sekolah {{ $jenis }} — Yayasan Cahaya Amanah Ar-Raudhah</title>
+    <title>Cetak Massal Surat Kelulusan Database Sekolah {{ $jenis }} | Yayasan Cahaya Amanah Ar-Raudhah</title>
     <script>
         window.tailwind = window.tailwind || {};
         window.tailwind.config = { theme: { extend: { colors: {

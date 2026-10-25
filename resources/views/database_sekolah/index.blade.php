@@ -21,7 +21,7 @@
                 </span>
                 <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight">{{ $jenis == 'TPQ' ? "Taman Pendidikan Qur'an Ar-Raudhah" : "Rumah Tahfidz Qur'an Ar-Raudhah" }}</h2>
             </div>
-            <p class="text-xs text-slate-500 mt-1">Database Sekolah nilai bacaan &amp; hafalan <strong class="text-slate-700">{{ $jenis == 'TPQ' ? "Taman Pendidikan Qur'an Ar-Raudhah" : "Rumah Tahfidz Qur'an Ar-Raudhah" }}</strong> — Tahun 2026</p>
+            <p class="text-xs text-slate-500 mt-1">Database Sekolah nilai bacaan &amp; hafalan <strong class="text-slate-700">{{ $jenis == 'TPQ' ? "Taman Pendidikan Qur'an Ar-Raudhah" : "Rumah Tahfidz Qur'an Ar-Raudhah" }}</strong> · Periode Tahun 2026</p>
         </div>
         <div class="flex flex-wrap items-center gap-2 self-start sm:self-auto">
             <a href="{{ route('database_sekolah.cetak.massal', ['jenis' => $jenis, 'unit' => request('unit')]) }}" target="_blank" class="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs px-3.5 py-2.5 rounded-xl shadow-xs transition"><i class="fa-solid fa-print"></i> Cetak Massal</a>

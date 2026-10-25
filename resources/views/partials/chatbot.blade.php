@@ -1,16 +1,15 @@
 <!-- ===== FLOATING FAQ CHATBOT WIDGET ===== -->
-<!-- Created by Hugo Putra Pratama for Yayasan Cahaya Amanah Ar-Raudhah -->
+<!-- Yayasan Cahaya Amanah Ar-Raudhah -->
 <div id="faq-chatbot-widget" class="fixed bottom-5 right-5 z-50 font-sans select-none no-print">
 
     <!-- Chat Trigger Button -->
     <button id="chatbot-toggle-btn"
             onclick="toggleChatbot()"
-            class="group relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 focus:outline-none ring-4 ring-blue-100 cursor-pointer"
+            class="group relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#1e3a8a] hover:bg-[#16285a] text-white shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 focus:outline-none ring-4 ring-[#1e3a8a]/20 cursor-pointer"
             aria-label="Buka FAQ Chatbot">
-        <!-- Notification Ping -->
+        <!-- Notification Badge -->
         <span class="absolute -top-1 -right-1 flex h-4 w-4">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-4 w-4 bg-blue-700 text-[9px] font-bold text-white items-center justify-center">1</span>
+            <span class="relative inline-flex rounded-full h-4 w-4 bg-amber-500 text-[9px] font-bold text-white items-center justify-center shadow-xs">1</span>
         </span>
 
         <!-- Icons -->
@@ -29,16 +28,16 @@
          class="hidden fixed sm:absolute bottom-20 right-0 left-4 sm:left-auto w-auto sm:w-96 max-w-[92vw] h-[580px] max-h-[84vh] bg-white rounded-3xl shadow-2xl border border-slate-200/90 flex-col overflow-hidden transition-all duration-300 transform origin-bottom-right z-50">
 
         <!-- Chat Header -->
-        <div class="bg-slate-900 p-4 text-white flex items-center justify-between border-b border-slate-800 shrink-0">
+        <div class="bg-[#081026] p-4 text-white flex items-center justify-between border-b border-[#16285a] shrink-0">
             <div class="flex items-center gap-3">
-                <div class="relative w-10 h-10 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-blue-400 text-lg shadow-inner">
-                    <i class="fa-solid fa-robot"></i>
-                    <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-slate-900"></span>
+                <div class="relative w-10 h-10 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-amber-300 text-lg shadow-inner">
+                    <i class="fa-solid fa-headset"></i>
+                    <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-[#081026]"></span>
                 </div>
                 <div>
                     <h3 class="text-xs sm:text-sm font-bold tracking-tight leading-tight flex items-center gap-1.5">
                         Asisten Ar-Raudhah
-                        <span class="text-[9px] px-1.5 py-0.5 rounded bg-blue-600 font-bold uppercase">AI Smart</span>
+                        <span class="text-[9px] px-1.5 py-0.5 rounded bg-blue-700 font-bold uppercase tracking-wider">Layanan Resmi</span>
                     </h3>
                     <p class="text-[10px] text-slate-300 font-medium leading-tight mt-0.5">
                         Yayasan Cahaya Amanah Ar-Raudhah
@@ -55,10 +54,10 @@
             </div>
         </div>
 
-        <!-- Creator Mini Bar -->
+        <!-- Institutional Mini Bar -->
         <div class="bg-slate-950 px-3.5 py-1.5 text-[11px] text-slate-400 flex items-center justify-between border-b border-slate-800">
             <span class="flex items-center gap-1.5 text-[10px] text-slate-400">
-                <i class="fa-solid fa-code text-blue-400 text-[10px]"></i> Pengembang: <strong class="text-white font-semibold">Hugo Putra Pratama</strong>
+                <i class="fa-solid fa-mosque text-emerald-400 text-[10px]"></i> Layanan Informasi Resmi Ar-Raudhah
             </span>
             <span class="text-[9px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full font-bold flex items-center gap-1">
                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Online
@@ -70,19 +69,15 @@
 
             <!-- Bot Welcome Bubble -->
             <div class="flex items-start gap-2.5">
-                <div class="w-7 h-7 rounded-xl bg-blue-600 text-white flex items-center justify-center text-xs shrink-0 mt-1 shadow-xs">
-                    <i class="fa-solid fa-robot"></i>
+                <div class="w-7 h-7 rounded-xl bg-[#1e3a8a] text-white flex items-center justify-center text-xs shrink-0 mt-1 shadow-xs">
+                    <i class="fa-solid fa-headset text-amber-300"></i>
                 </div>
                 <div class="bg-white border border-slate-200 rounded-2xl rounded-tl-xs p-3.5 text-slate-800 shadow-xs max-w-[88%] space-y-2 leading-relaxed">
                     <p class="font-bold text-slate-900 text-xs">
                         Assalamu'alaikum! 👋
                     </p>
                     <p class="text-slate-600 text-xs leading-relaxed">
-                        Saya Asisten Cerdas <strong>Yayasan Cahaya Amanah Ar-Raudhah</strong> yang dirancang dan dikembangkan oleh 
-                        <strong class="text-blue-600 font-bold">Hugo Putra Pratama</strong>.
-                    </p>
-                    <p class="text-slate-600 text-xs">
-                        Kini saya semakin pintar! Saya dapat mencari data santri, nilai ujian, membaca Al-Qur'an 114 surah, jadwal sholat, perhitungan matematika, dan hukum tajwid.
+                        Saya Asisten Layanan Informasi <strong>Yayasan Cahaya Amanah Ar-Raudhah</strong> siap membantu Anda mencari data santri, nilai ujian, membaca Al-Qur'an 114 surah, jadwal sholat, perhitungan nilai, dan hukum tajwid.
                     </p>
                 </div>
             </div>
@@ -91,28 +86,28 @@
             <div id="chat-suggestions" class="space-y-1.5 pt-2">
                 <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider px-1">Pertanyaan Cepat:</p>
                 <div class="flex flex-wrap gap-1.5">
-                    <button type="button" onclick="askQuestion('Siapa pembuat sistem ini?')" class="suggestion-chip px-2.5 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-blue-500 hover:text-blue-700 hover:bg-blue-50 text-slate-700 text-[11px] font-semibold transition text-left shadow-2xs">
-                        👨‍💻 Pembuat Sistem
+                    <button type="button" onclick="askQuestion('Apa saja informasi tentang sistem ini?')" class="suggestion-chip px-2.5 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-[#1e3a8a] hover:text-[#1e3a8a] hover:bg-blue-50/60 text-slate-700 text-[11px] font-semibold transition text-left shadow-2xs">
+                        ℹ️ Informasi Sistem
                     </button>
-                    <button type="button" onclick="askQuestion('Berapa jumlah santri saat ini?')" class="suggestion-chip px-2.5 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-emerald-500 hover:text-emerald-700 hover:bg-emerald-50 text-slate-700 text-[11px] font-semibold transition text-left shadow-2xs">
+                    <button type="button" onclick="askQuestion('Berapa jumlah santri saat ini?')" class="suggestion-chip px-2.5 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-[#1e3a8a] hover:text-[#1e3a8a] hover:bg-blue-50/60 text-slate-700 text-[11px] font-semibold transition text-left shadow-2xs">
                         📊 Total Santri
                     </button>
-                    <button type="button" onclick="askQuestion('Siapa santri dengan nilai tertinggi?')" class="suggestion-chip px-2.5 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-purple-500 hover:text-purple-700 hover:bg-purple-50 text-slate-700 text-[11px] font-semibold transition text-left shadow-2xs">
+                    <button type="button" onclick="askQuestion('Siapa santri dengan nilai tertinggi?')" class="suggestion-chip px-2.5 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-amber-600 hover:text-amber-800 hover:bg-amber-50/60 text-slate-700 text-[11px] font-semibold transition text-left shadow-2xs">
                         🏆 Santri Terbaik
                     </button>
-                    <button type="button" onclick="askQuestion('Surat Al-Fatihah')" class="suggestion-chip px-2.5 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-teal-500 hover:text-teal-700 hover:bg-teal-50 text-slate-700 text-[11px] font-semibold transition text-left shadow-2xs">
+                    <button type="button" onclick="askQuestion('Surat Al-Fatihah')" class="suggestion-chip px-2.5 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-[#1e3a8a] hover:text-[#1e3a8a] hover:bg-blue-50/60 text-slate-700 text-[11px] font-semibold transition text-left shadow-2xs">
                         📖 Surah Al-Fatihah
                     </button>
-                    <button type="button" onclick="askQuestion('Ayat Kursi')" class="suggestion-chip px-2.5 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-amber-500 hover:text-amber-700 hover:bg-amber-50 text-slate-700 text-[11px] font-semibold transition text-left shadow-2xs">
+                    <button type="button" onclick="askQuestion('Ayat Kursi')" class="suggestion-chip px-2.5 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-amber-600 hover:text-amber-800 hover:bg-amber-50/60 text-slate-700 text-[11px] font-semibold transition text-left shadow-2xs">
                         ✨ Ayat Kursi
                     </button>
-                    <button type="button" onclick="askQuestion('Jadwal sholat hari ini')" class="suggestion-chip px-2.5 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-blue-500 hover:text-blue-700 hover:bg-blue-50 text-slate-700 text-[11px] font-semibold transition text-left shadow-2xs">
+                    <button type="button" onclick="askQuestion('Jadwal sholat hari ini')" class="suggestion-chip px-2.5 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-[#1e3a8a] hover:text-[#1e3a8a] hover:bg-blue-50/60 text-slate-700 text-[11px] font-semibold transition text-left shadow-2xs">
                         🕌 Jadwal Sholat
                     </button>
-                    <button type="button" onclick="askQuestion('Apa saja 9 mata uji penilaian?')" class="suggestion-chip px-2.5 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-blue-500 hover:text-blue-700 hover:bg-blue-50 text-slate-700 text-[11px] font-semibold transition text-left shadow-2xs">
+                    <button type="button" onclick="askQuestion('Apa saja 9 mata uji penilaian?')" class="suggestion-chip px-2.5 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-[#1e3a8a] hover:text-[#1e3a8a] hover:bg-blue-50/60 text-slate-700 text-[11px] font-semibold transition text-left shadow-2xs">
                         📖 9 Mata Uji
                     </button>
-                    <button type="button" onclick="askQuestion('Hitung 25% dari 500000')" class="suggestion-chip px-2.5 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-indigo-500 hover:text-indigo-700 hover:bg-indigo-50 text-slate-700 text-[11px] font-semibold transition text-left shadow-2xs">
+                    <button type="button" onclick="askQuestion('Hitung 25% dari 500000')" class="suggestion-chip px-2.5 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-[#1e3a8a] hover:text-[#1e3a8a] hover:bg-blue-50/60 text-slate-700 text-[11px] font-semibold transition text-left shadow-2xs">
                         🧮 25% dari 500rb
                     </button>
                 </div>
@@ -164,14 +159,14 @@
                 <!-- Send Button -->
                 <button type="submit"
                         id="chatbot-send-btn"
-                        class="w-10 h-10 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center shadow-md hover:scale-105 active:scale-95 transition cursor-pointer shrink-0"
+                        class="w-10 h-10 rounded-2xl bg-[#1e3a8a] hover:bg-[#16285a] text-white flex items-center justify-center shadow-md hover:scale-105 active:scale-95 transition cursor-pointer shrink-0"
                         title="Kirim Pesan">
                     <i class="fa-solid fa-paper-plane text-xs"></i>
                 </button>
             </form>
             <div class="text-center mt-1.5 flex items-center justify-between px-1">
                 <span class="text-[9px] text-slate-400">
-                    Karya <strong class="text-slate-600">Hugo Putra Pratama</strong>
+                    <strong class="text-slate-600">Yayasan Cahaya Amanah Ar-Raudhah</strong>
                 </span>
                 <span class="text-[9px] text-slate-400">
                     Bisa tanya nama santri, surah, &amp; sholat
@@ -309,25 +304,24 @@
     // FAQ Knowledge Base (Local Offline Fallback)
     const FAQ_KNOWLEDGE = [
         {
-            keywords: ['pembuat', 'hugo', 'putra', 'pratama', 'developer', 'creator', 'pembuatnya', 'siapa yang bikin', 'author', 'programmer', 'bikin', 'dibuat'],
+            keywords: ['sistem', 'aplikasi', 'yayasan', 'ar-raudhah', 'informasi', 'tentang', 'pengelola', 'pengembang'],
             answer: `
                 <div class="space-y-2">
                     <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
                         <p class="font-black text-slate-900 text-xs sm:text-sm flex items-center gap-1.5">
-                            👨‍💻 <span>Hugo Putra Pratama</span>
+                            🏛️ <span>Sistem Manajemen Database &amp; Penilaian Munaqasyah</span>
                         </p>
-                        <p class="text-[11px] text-blue-700 font-semibold mt-0.5">Software Engineer &amp; Full-Stack Architect</p>
+                        <p class="text-[11px] text-blue-700 font-semibold mt-0.5">Yayasan Cahaya Amanah Ar-Raudhah</p>
                     </div>
                     <p class="text-slate-700 leading-relaxed text-xs">
-                        Sistem Database Sekolah ini <strong>dibuat dan dirancang secara eksklusif oleh Hugo Putra Pratama</strong> untuk <strong>Yayasan Cahaya Amanah Ar-Raudhah Banjarbaru</strong>.
+                        Sistem ini dikelola secara resmi untuk digitalisasi proses penilaian, munaqasyah, dan penerbitan kelulusan santri di <strong>Yayasan Cahaya Amanah Ar-Raudhah Banjarbaru</strong>.
                     </p>
                     <div class="text-[11px] text-slate-600 space-y-1">
-                        <p>✨ <strong>Sorotan Fitur Unggulan:</strong></p>
+                        <p>✨ <strong>Fitur Utama:</strong></p>
                         <ul class="list-disc list-inside space-y-0.5 text-slate-500 pl-1">
-                            <li>Laravel 12 &amp; Modern PHP 8.2+ Architecture</li>
-                            <li>Kalkulasi Otomatis 9 Mata Uji &amp; Export Dokumen</li>
-                            <li>Cetak Surat Kelulusan &amp; Cek Kelulusan Mandiri</li>
-                            <li>Chatbot AI Interaktif dengan Pencarian Santri &amp; Suara</li>
+                            <li>Kalkulasi Otomatis 9 Mata Uji Standar Munaqasyah</li>
+                            <li>Cetak Surat Kelulusan Resmi &amp; Cek Kelulusan Mandiri</li>
+                            <li>Chatbot AI Interaktif &amp; Al-Qur'an Digital</li>
                         </ul>
                     </div>
                 </div>
@@ -339,17 +333,17 @@
                 <div class="space-y-1.5">
                     <p class="font-bold text-slate-900">📖 9 Mata Uji Standar Database Sekolah:</p>
                     <ol class="list-decimal list-inside space-y-1 text-slate-700 pl-1 text-xs">
-                        <li><strong>Fashohah</strong> — Kelancaran membaca Al-Qur'an</li>
-                        <li><strong>Tajwid</strong> — Ketepatan hukum tajwid</li>
-                        <li><strong>Gharib &amp; Musykilat</strong> — Ayat-ayat asing &amp; khusus</li>
-                        <li><strong>Suara &amp; Lagu</strong> — Irama tartil santri</li>
-                        <li><strong>Ayat Pilihan</strong> — Ujian tilawah acak</li>
-                        <li><strong>Surah Pendek</strong> — Hafalan Juz 'Amma (Juz 30)</li>
-                        <li><strong>Doa Harian</strong> — Doa-doa harian praktis</li>
-                        <li><strong>Bacaan Shalat</strong> — Doa &amp; gerakan sholat</li>
-                        <li><strong>Ujian Tertulis</strong> — Dinul Islam &amp; tajwid teori</li>
+                        <li><strong>Fashohah</strong>: Kelancaran membaca Al-Qur'an</li>
+                        <li><strong>Tajwid</strong>: Ketepatan hukum tajwid</li>
+                        <li><strong>Gharib &amp; Musykilat</strong>: Ayat-ayat asing &amp; khusus</li>
+                        <li><strong>Suara &amp; Lagu</strong>: Irama tartil santri</li>
+                        <li><strong>Ayat Pilihan</strong>: Ujian tilawah acak</li>
+                        <li><strong>Surah Pendek</strong>: Hafalan Juz 'Amma (Juz 30)</li>
+                        <li><strong>Doa Harian</strong>: Doa-doa harian praktis</li>
+                        <li><strong>Bacaan Shalat</strong>: Doa &amp; gerakan sholat</li>
+                        <li><strong>Ujian Tertulis</strong>: Dinul Islam &amp; tajwid teori</li>
                     </ol>
-                    <p class="text-[11px] text-slate-500 pt-1">Seluruh nilai dihitung otomatis oleh sistem karya Hugo Putra Pratama!</p>
+                    <p class="text-[11px] text-slate-500 pt-1">Seluruh nilai dihitung otomatis secara akurat oleh sistem.</p>
                 </div>
             `
         },
@@ -434,7 +428,7 @@
         // Add user bubble
         const userHtml = `
             <div class="flex items-start justify-end gap-2.5">
-                <div class="bg-blue-600 text-white rounded-2xl rounded-tr-xs p-3 shadow-xs max-w-[85%] font-medium leading-relaxed text-xs sm:text-sm">
+                <div class="bg-[#1e3a8a] text-white rounded-2xl rounded-tr-xs p-3 shadow-xs max-w-[85%] font-medium leading-relaxed text-xs sm:text-sm">
                     ${escapeHtml(query)}
                 </div>
             </div>
@@ -472,15 +466,15 @@
                 } else if (data.source === 'quran_api') {
                     sourceBadge = '<span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold ml-1.5"><i class="fa-solid fa-book-quran mr-1"></i>Al-Qur\'anul Karim</span>';
                 } else if (data.source === 'prayer_worship') {
-                    sourceBadge = '<span class="text-[9px] px-1.5 py-0.5 rounded bg-indigo-100 text-indigo-800 font-bold ml-1.5"><i class="fa-solid fa-mosque mr-1"></i>Jadwal Sholat &amp; Doa</span>';
+                    sourceBadge = '<span class="text-[9px] px-1.5 py-0.5 rounded bg-blue-100 text-blue-800 font-bold ml-1.5"><i class="fa-solid fa-mosque mr-1"></i>Jadwal Sholat &amp; Doa</span>';
                 } else if (data.source === 'database') {
                     sourceBadge = '<span class="text-[9px] px-1.5 py-0.5 rounded bg-blue-100 text-blue-800 font-bold ml-1.5"><i class="fa-solid fa-database mr-1"></i>Data Realtime</span>';
                 } else if (data.source === 'calculator') {
                     sourceBadge = '<span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold ml-1.5"><i class="fa-solid fa-calculator mr-1"></i>Kalkulator</span>';
                 } else if (data.source === 'wikipedia') {
-                    sourceBadge = '<span class="text-[9px] px-1.5 py-0.5 rounded bg-purple-100 text-purple-800 font-bold ml-1.5"><i class="fa-solid fa-book mr-1"></i>Ensiklopedia</span>';
+                    sourceBadge = '<span class="text-[9px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-800 font-bold ml-1.5"><i class="fa-solid fa-book mr-1"></i>Ensiklopedia</span>';
                 } else if (data.source === 'generative_ai') {
-                    sourceBadge = '<span class="text-[9px] px-1.5 py-0.5 rounded bg-blue-100 text-blue-800 font-bold ml-1.5"><i class="fa-solid fa-wand-magic-sparkles mr-1"></i>AI Generatif</span>';
+                    sourceBadge = '<span class="text-[9px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-800 font-bold ml-1.5"><i class="fa-solid fa-circle-info mr-1"></i>Layanan Resmi</span>';
                 }
             } else {
                 botAnswer = findOfflineAnswer(query);
@@ -541,7 +535,7 @@
                     <li><strong>Cari Data Santri</strong> (contoh: <em>"cari santri Ahmad"</em>)</li>
                     <li><strong>Al-Qur'an 114 Surah</strong> (contoh: <em>"surah al fatihah"</em>, <em>"ayat kursi"</em>)</li>
                     <li><strong>Jadwal Sholat &amp; Doa Harian</strong></li>
-                    <li><strong>Pembuat Sistem</strong> (Karya <strong>Hugo Putra Pratama</strong>)</li>
+                    <li><strong>Informasi Sistem</strong> (Fitur &amp; Penggunaan)</li>
                     <li><strong>9 Mata Uji Database Sekolah &amp; Syarat Kelulusan</strong></li>
                 </ul>
             </div>
@@ -561,11 +555,10 @@
                         Percakapan telah dimulai ulang. 👋
                     </p>
                     <p class="text-slate-600 leading-relaxed">
-                        Saya adalah Asisten Virtual Cerdas <strong>Yayasan Cahaya Amanah Ar-Raudhah</strong> karya 
-                        <strong class="text-blue-600 font-bold">Hugo Putra Pratama</strong>.
+                        Saya adalah Asisten Virtual Resmi <strong>Yayasan Cahaya Amanah Ar-Raudhah</strong>.
                     </p>
                     <p class="text-slate-600">
-                        Silakan tanyakan apa saja yang ingin Anda ketahui!
+                        Silakan tanyakan apa saja yang ingin Anda ketahui seputar santri, munaqasyah, atau Al-Qur'an!
                     </p>
                 </div>
             </div>
@@ -573,16 +566,16 @@
             <div id="chat-suggestions" class="space-y-1.5 pt-2">
                 <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider px-1">Pertanyaan Cepat:</p>
                 <div class="flex flex-wrap gap-1.5">
-                    <button type="button" onclick="askQuestion('Siapa pembuat sistem ini?')" class="suggestion-chip px-2.5 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-blue-500 hover:text-blue-700 hover:bg-blue-50 text-slate-700 text-[11px] font-semibold transition text-left shadow-2xs">
-                        👨‍💻 Pembuat Sistem
+                    <button type="button" onclick="askQuestion('Apa saja informasi tentang sistem ini?')" class="suggestion-chip px-2.5 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-[#1e3a8a] hover:text-[#1e3a8a] hover:bg-blue-50/60 text-slate-700 text-[11px] font-semibold transition text-left shadow-2xs">
+                        ℹ️ Informasi Sistem
                     </button>
-                    <button type="button" onclick="askQuestion('Berapa jumlah santri saat ini?')" class="suggestion-chip px-2.5 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-emerald-500 hover:text-emerald-700 hover:bg-emerald-50 text-slate-700 text-[11px] font-semibold transition text-left shadow-2xs">
+                    <button type="button" onclick="askQuestion('Berapa jumlah santri saat ini?')" class="suggestion-chip px-2.5 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-[#1e3a8a] hover:text-[#1e3a8a] hover:bg-blue-50/60 text-slate-700 text-[11px] font-semibold transition text-left shadow-2xs">
                         📊 Total Santri
                     </button>
-                    <button type="button" onclick="askQuestion('Siapa santri dengan nilai tertinggi?')" class="suggestion-chip px-2.5 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-purple-500 hover:text-purple-700 hover:bg-purple-50 text-slate-700 text-[11px] font-semibold transition text-left shadow-2xs">
+                    <button type="button" onclick="askQuestion('Siapa santri dengan nilai tertinggi?')" class="suggestion-chip px-2.5 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-amber-600 hover:text-amber-800 hover:bg-amber-50/60 text-slate-700 text-[11px] font-semibold transition text-left shadow-2xs">
                         🏆 Santri Terbaik
                     </button>
-                    <button type="button" onclick="askQuestion('Surat Al-Fatihah')" class="suggestion-chip px-2.5 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-teal-500 hover:text-teal-700 hover:bg-teal-50 text-slate-700 text-[11px] font-semibold transition text-left shadow-2xs">
+                    <button type="button" onclick="askQuestion('Surat Al-Fatihah')" class="suggestion-chip px-2.5 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-[#1e3a8a] hover:text-[#1e3a8a] hover:bg-blue-50/60 text-slate-700 text-[11px] font-semibold transition text-left shadow-2xs">
                         📖 Surah Al-Fatihah
                     </button>
                 </div>

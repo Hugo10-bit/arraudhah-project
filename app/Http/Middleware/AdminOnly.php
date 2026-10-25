@@ -10,8 +10,6 @@ use Symfony\Component\HttpFoundation\Response;
  * Admin-Only Middleware (Role-Based Access Control)
  * Hanya mengizinkan pengguna dengan role 'Administrator' mengakses
  * rute-rute sensitif seperti manajemen user, pengaturan, dan backup.
- *
- * @author Hugo Putra Pratama — Yayasan Cahaya Amanah Ar-Raudhah
  */
 class AdminOnly
 {

@@ -11,8 +11,6 @@ use Symfony\Component\HttpFoundation\Response;
  * Login Rate Limiter Middleware
  * Melindungi endpoint login dari serangan brute-force.
  * Maksimal 5 percobaan gagal per IP per 15 menit.
- *
- * @author Hugo Putra Pratama — Yayasan Cahaya Amanah Ar-Raudhah
  */
 class LoginRateLimiter
 {

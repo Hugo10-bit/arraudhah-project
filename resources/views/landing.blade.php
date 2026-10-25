@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yayasan Cahaya Amanah Ar-Raudhah — Database Sekolah TPQ & RTQ</title>
+    <title>Yayasan Cahaya Amanah Ar-Raudhah | Database Sekolah TPQ & RTQ</title>
     <meta name="description" content="Platform digital database sekolah, biodata & penilaian santri Taman Pendidikan Qur'an (TPQ) & Rumah Tahfidz Qur'an (RTQ) Ar-Raudhah, Yayasan Cahaya Amanah Ar-Raudhah Banjarbaru.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -185,24 +185,22 @@
         <div class="max-w-6xl mx-auto px-4">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
                 <div class="stat-card rounded-2xl p-5 text-center bg-[#0d1e4a]/60 border border-[#3b82f6]/30 shadow-lg">
-                    <p class="text-3xl sm:text-4xl font-black text-amber-400" data-count="2">0</p>
+                    <p class="text-3xl sm:text-4xl font-black text-amber-400">2</p>
                     <p class="text-xs text-white font-bold uppercase tracking-wide mt-1">Lembaga Naungan</p>
                     <p class="text-[11px] text-blue-200 mt-0.5 font-semibold">TPQ &amp; RTQ Ar-Raudhah</p>
                 </div>
                 <div class="stat-card rounded-2xl p-5 text-center bg-[#0d1e4a]/60 border border-[#3b82f6]/30 shadow-lg">
-                    <p class="text-3xl sm:text-4xl font-black text-amber-400" data-count="9">0</p>
+                    <p class="text-3xl sm:text-4xl font-black text-amber-400">9</p>
                     <p class="text-xs text-white font-bold uppercase tracking-wide mt-1">Mata Uji Standar</p>
                     <p class="text-[11px] text-blue-200 mt-0.5 font-semibold">Tajwid, Gharib, &amp; Hafalan</p>
                 </div>
                 <div class="stat-card rounded-2xl p-5 text-center bg-[#0d1e4a]/60 border border-[#3b82f6]/30 shadow-lg">
-                    <p class="text-3xl sm:text-4xl font-black text-amber-400">
-                        <span data-count="100">0</span>%
-                    </p>
+                    <p class="text-3xl sm:text-4xl font-black text-amber-400">100%</p>
                     <p class="text-xs text-white font-bold uppercase tracking-wide mt-1">Digital &amp; Akurat</p>
                     <p class="text-[11px] text-blue-200 mt-0.5 font-semibold">Kalkulasi Otomatis</p>
                 </div>
                 <div class="stat-card rounded-2xl p-5 text-center bg-[#0d1e4a]/60 border border-[#3b82f6]/30 shadow-lg">
-                    <p class="text-3xl sm:text-4xl font-black text-amber-400" data-count="1447">0</p>
+                    <p class="text-3xl sm:text-4xl font-black text-amber-400">1447 H</p>
                     <p class="text-xs text-white font-bold uppercase tracking-wide mt-1">Tahun Hijriyah</p>
                     <p class="text-[11px] text-blue-200 mt-0.5 font-semibold">1447 H / 2026 M</p>
                 </div>
@@ -224,7 +222,6 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- TPQ Card (Official Royal Blue Identity) -->
                 <div class="bg-gradient-to-br from-[#0c1a44] via-[#102560] to-[#183584] border border-blue-400/50 rounded-3xl p-8 shadow-xl shadow-[#1e3a8a]/20 hover:border-white transition reveal relative overflow-hidden">
-                    <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-blue-500/10 rounded-full blur-2xl"></div>
                     <div class="flex items-center gap-4 mb-5">
                         <div class="w-16 h-16 bg-white/10 backdrop-blur-xs border-2 border-[#60a5fa] rounded-2xl flex items-center justify-center p-1.5 shadow-lg overflow-hidden shrink-0">
                             <img src="{{ asset('images/logo_tpq.png') }}" alt="Logo TPQ Ar-Raudhah" class="w-full h-full object-contain">
@@ -248,7 +245,6 @@
 
                 <!-- RTQ Card (Official Islamic Emerald Identity) -->
                 <div class="bg-gradient-to-br from-[#041a12] via-[#062b1e] to-[#0a3d2b] border border-emerald-500/50 rounded-3xl p-8 shadow-xl shadow-emerald-950/20 hover:border-white transition reveal relative overflow-hidden">
-                    <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-emerald-500/10 rounded-full blur-2xl"></div>
                     <div class="flex items-center gap-4 mb-5">
                         <div class="w-16 h-16 bg-white border-2 border-emerald-400/50 rounded-2xl flex items-center justify-center p-1.5 shadow-lg overflow-hidden shrink-0">
                             <img src="{{ asset('images/logo_rtq.png') }}" alt="Logo RTQ Ar-Raudhah" class="w-full h-full object-contain">
@@ -358,19 +354,19 @@
 
             <!-- FAQ List -->
             <div class="space-y-4 reveal">
-                <!-- Q1: Pembuat -->
+                <!-- Q1: Pengelola -->
                 <div class="bg-gradient-to-r from-[#0d1c44] to-[#1e3a8a]/50 border border-blue-400/30 rounded-2xl p-6 shadow-xl shadow-[#1e3a8a]/20">
                     <div class="flex items-start gap-4">
                         <div class="w-12 h-12 rounded-2xl bg-blue-700 text-white flex items-center justify-center text-xl shrink-0 shadow-md">
-                            <i class="fa-solid fa-code"></i>
+                            <i class="fa-solid fa-building-columns"></i>
                         </div>
                         <div>
                             <h3 class="text-base font-bold text-white mb-1.5 flex items-center gap-2">
-                                Siapa pembuat sistem database sekolah ini?
-                                <span class="px-2.5 py-0.5 rounded text-[10px] font-bold bg-blue-600 text-white uppercase shadow-sm">Creator</span>
+                                Siapa yang mengelola sistem database sekolah ini?
+                                <span class="px-2.5 py-0.5 rounded text-[10px] font-bold bg-blue-600 text-white uppercase shadow-sm">Pengelola</span>
                             </h3>
                             <p class="text-blue-100 text-xs sm:text-sm leading-relaxed">
-                                Sistem ini dirancang dan diciptakan oleh <strong class="text-amber-300 font-bold">Hugo Putra Pratama</strong>, software engineer yang mendedikasikan platform digital ini untuk standarisasi penilaian santri di <strong class="text-white">Yayasan Cahaya Amanah Ar-Raudhah Banjarbaru</strong>.
+                                Sistem ini dikelola dan dioperasikan secara resmi oleh Tim Manajemen Data dan Panitia <strong class="text-white">Yayasan Cahaya Amanah Ar-Raudhah Banjarbaru</strong> untuk standarisasi penilaian santri TPQ dan RTQ.
                             </p>
                         </div>
                     </div>
@@ -439,9 +435,6 @@
     <!-- ===== TENTANG SECTION ===== -->
     <section id="tentang" class="py-20 bg-gradient-to-br from-[#060e22] via-[#0d1d44] to-[#162d6b] relative overflow-hidden border-t-2 border-[#1e3a8a]/40">
         <div class="absolute inset-0 islamic-bg opacity-40"></div>
-        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl"></div>
-        
         <div class="max-w-4xl mx-auto px-4 relative z-10">
             <div class="text-center reveal">
                 <p class="arabic-shimmer text-3xl font-bold mb-4">اِقْرَأْ بِاسْمِ رَبِّكَ الَّذِيْ خَلَقَ</p>
@@ -486,7 +479,6 @@
         <div class="max-w-3xl mx-auto px-4 text-center reveal">
             <div class="bg-gradient-to-br from-[#091536] via-[#102456] to-[#183584] border-2 border-[#3b82f6]/50 rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
                 <div class="absolute inset-0 islamic-bg opacity-30"></div>
-                <div class="absolute -top-10 -right-10 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl"></div>
                 <div class="relative z-10">
                     <div class="w-20 h-20 bg-white rounded-2xl p-1.5 shadow-2xl mx-auto mb-5 border-2 border-[#1e3a8a] flex items-center justify-center">
                         <img src="{{ asset('images/logo.png') }}" alt="Logo Yayasan" class="w-full h-full object-contain">
@@ -517,7 +509,7 @@
                 <span class="text-[#60a5fa] text-xs font-semibold">TPQ &amp; RTQ Ar-Raudhah Banjarbaru, Kalimantan Selatan</span>
             </div>
             <p class="text-xs text-slate-400">
-                &copy; 2026 Database Sekolah Santri. Diciptakan &amp; Dikembangkan oleh <strong class="text-amber-300 font-bold">Hugo Putra Pratama</strong>.
+                &copy; 2026 Database Sekolah Santri. Yayasan Cahaya Amanah Ar-Raudhah. Seluruh hak cipta dilindungi.
             </p>
         </div>
     </footer>
@@ -539,67 +531,9 @@
             });
         }, { threshold: 0.1 });
         revealEls.forEach(el => observer.observe(el));
-
-        // Counter animation
-        function animateCounter(el, target, duration = 1800) {
-            let start = 0;
-            const step = (timestamp) => {
-                if (!start) start = timestamp;
-                const progress = Math.min((timestamp - start) / duration, 1);
-                el.textContent = Math.floor(progress * target);
-                if (progress < 1) requestAnimationFrame(step);
-                else el.textContent = target;
-            };
-            requestAnimationFrame(step);
-        }
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const el = entry.target;
-                    animateCounter(el, parseInt(el.dataset.count));
-                    counterObserver.unobserve(el);
-                }
-            });
-        }, { threshold: 0.5 });
-        document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
-
-        // Canvas particles
-        const canvas = document.getElementById('particles');
-        const ctx = canvas.getContext('2d');
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-        
-        const colors = ['rgba(147,197,253,', 'rgba(252,165,165,', 'rgba(251,191,36,'];
-        const pts = Array.from({length: 50}, () => ({
-            x: Math.random() * window.innerWidth,
-            y: Math.random() * window.innerHeight,
-            r: Math.random() * 1.6 + 0.6,
-            dx: (Math.random() - 0.5) * 0.4,
-            dy: (Math.random() - 0.5) * 0.4,
-            color: colors[Math.floor(Math.random() * colors.length)],
-            a: Math.random() * 0.4 + 0.15,
-        }));
-        function drawParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            pts.forEach(p => {
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                ctx.fillStyle = `${p.color}${p.a})`;
-                ctx.fill();
-                p.x += p.dx; p.y += p.dy;
-                if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-                if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-            });
-            requestAnimationFrame(drawParticles);
-        }
-        drawParticles();
     </script>
 
-    {{-- Floating FAQ Chatbot Widget (Created by Hugo Putra Pratama) --}}
+    {{-- Floating FAQ Chatbot Widget --}}
     @include('partials.chatbot')
 </body>
 </html>

@@ -11,24 +11,18 @@ use App\Http\Controllers\PublicCheckController;
 use App\Http\Controllers\ChatbotController;
 use App\Http\Controllers\SantriController;
 
-// ============================================================
-// ===== Auth Routes (public) — dilindungi rate limiter  ======
-// ============================================================
+// Auth routes (public) dilindungi rate limiter
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])
     ->middleware('login.throttle')
     ->name('login.post');
 
-// ============================================================
-// ===== Landing Page (public) ================================
-// ============================================================
+// Landing page (public)
 Route::get('/', function () {
     return view('landing');
 })->name('landing');
 
-// ============================================================
-// ===== Redirect lama /munaqasyah → /database-sekolah ========
-// ============================================================
+// Redirect legacy URL /munaqasyah -> /database-sekolah
 Route::get('/munaqasyah', function () {
     return redirect('/database-sekolah' . (request()->getQueryString() ? '?' . request()->getQueryString() : ''));
 });
@@ -36,35 +30,27 @@ Route::get('/munaqasyah/{any}', function ($any) {
     return redirect('/database-sekolah/' . $any . (request()->getQueryString() ? '?' . request()->getQueryString() : ''));
 })->where('any', '.*');
 
-// ============================================================
-// ===== Public Routes (tidak butuh login) ====================
-// ============================================================
-// Cek Kelulusan — hanya expose info yang diperlukan wali santri
+// Public routes
 Route::get('/cek-kelulusan', [PublicCheckController::class, 'index'])->name('public.check');
 Route::get('/cek-kelulusan/{id}', [PublicCheckController::class, 'show'])
-    ->where('id', '[0-9]+')  // ✅ Batasi hanya angka (cegah ID enumeration string)
+    ->where('id', '[0-9]+')
     ->name('public.check.cetak');
 
-// Chatbot AI — publik tapi dilindungi rate limiter
+// Layanan Chatbot FAQ
 Route::post('/chatbot/ask', [ChatbotController::class, 'ask'])
     ->middleware('chatbot.throttle')
     ->name('chatbot.ask');
 
-// ============================================================
-// ===== Protected Routes — wajib login =======================
-// ============================================================
+// Protected routes (wajib login)
 Route::middleware('auth.check')->group(function () {
 
-    // Logout
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-
-    // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    // ── Biodata Siswa (semua user yang sudah login) ──────────────────
+    // Biodata Santri
     Route::resource('santri', SantriController::class);
 
-    // ── Database Sekolah — Penilaian (semua user yang sudah login) ─────────
+    // Database Sekolah & Penilaian
     Route::prefix('database-sekolah')->name('database_sekolah.')->group(function () {
         Route::get('/', [DatabaseSekolahController::class, 'index'])->name('index');
         Route::get('/tambah', [DatabaseSekolahController::class, 'create'])->name('create');
@@ -75,17 +61,17 @@ Route::middleware('auth.check')->group(function () {
         Route::post('/import', [ImportSantriController::class, 'import'])->name('import.post');
         Route::get('/import/template', [ImportSantriController::class, 'downloadTemplate'])->name('import.template');
 
-        // Export
+        // Export data
         Route::get('/export/excel', [DatabaseSekolahController::class, 'exportExcel'])->name('export.excel');
         Route::get('/export/csv', [DatabaseSekolahController::class, 'exportCsv'])->name('export.csv');
 
-        // Surat Kelulusan
+        // Surat kelulusan
         Route::get('/cetak-massal', [DatabaseSekolahController::class, 'cetakMassal'])->name('cetak.massal');
         Route::get('/{id}/kelulusan', [DatabaseSekolahController::class, 'kelulusan'])
             ->where('id', '[0-9]+')
             ->name('kelulusan');
 
-        // CRUD — Edit & Update bisa semua user login
+        // CRUD Edit & Update
         Route::get('/{id}/edit', [DatabaseSekolahController::class, 'edit'])
             ->where('id', '[0-9]+')
             ->name('edit');
@@ -93,19 +79,19 @@ Route::middleware('auth.check')->group(function () {
             ->where('id', '[0-9]+')
             ->name('update');
 
-        // ✅ RBAC: Hapus data santri — hanya Administrator
+        // Hapus data santri (khusus Administrator)
         Route::delete('/{id}', [DatabaseSekolahController::class, 'destroy'])
             ->where('id', '[0-9]+')
             ->middleware('admin.only')
             ->name('destroy');
     });
 
-    // ── Kelola Pengguna — hanya Administrator ─────────────────────────
+    // Kelola pengguna (khusus Administrator)
     Route::resource('users', UserController::class)
         ->except(['show'])
         ->middleware('admin.only');
 
-    // ── Pengaturan & Backup — hanya Administrator ─────────────────────
+    // Pengaturan sistem & backup (khusus Administrator)
     Route::prefix('settings')->name('settings.')->middleware('admin.only')->group(function () {
         Route::get('/', [SettingController::class, 'index'])->name('index');
         Route::post('/', [SettingController::class, 'update'])->name('update');

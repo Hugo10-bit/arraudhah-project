@@ -8,10 +8,8 @@ use Illuminate\Support\Facades\Log;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * CheckLogin Middleware — diperkuat dengan validasi integritas session
+ * CheckLogin Middleware
  * Memastikan user login valid, session tidak dibajak, dan akun masih aktif.
- *
- * @author Hugo Putra Pratama — Yayasan Cahaya Amanah Ar-Raudhah
  */
 class CheckLogin
 {
@@ -29,8 +27,8 @@ class CheckLogin
             $user = \App\Models\User::find($userId);
 
             if (!$user) {
-                // User telah dihapus dari database — paksa logout
-                Log::warning("Session hijack attempt atau akun dihapus. Session user_id={$userId}, IP=" . $request->ip());
+                // User telah dihapus dari database, paksa logout
+                Log::warning("Session tidak valid atau akun dihapus. Session user_id={$userId}, IP=" . $request->ip());
                 session()->flush();
                 session()->regenerate();
 
@@ -46,9 +44,8 @@ class CheckLogin
 
         $response = $next($request);
 
-        // ✅ KEAMANAN: Cegah browser cache pada halaman terproteksi
-        // Memastikan saat user sudah logout, menekan tombol 'Back' di browser
-        // tidak akan menampilkan halaman sebelumnya dan wajib login kembali.
+        // Cegah browser cache pada halaman terproteksi
+        // Memastikan setelah logout, tombol back tidak menampilkan halaman terproteksi.
         $response->headers->set('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
         $response->headers->set('Pragma', 'no-cache');
         $response->headers->set('Expires', 'Sun, 02 Jan 1990 00:00:00 GMT');

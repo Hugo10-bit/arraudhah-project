@@ -12,13 +12,13 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
 
-        // ── Cookies yang tidak dienkripsi agar bisa dibaca JS & PHP langsung ──
+        // Cookie preferensi UI tanpa enkripsi
         $middleware->encryptCookies(except: [
             'theme',
             'sidebar_collapsed',
         ]);
 
-        // ── Middleware Aliases (bisa dipakai di routes) ──────────────────
+        // Middleware route aliases
         $middleware->alias([
             'auth.check'       => \App\Http\Middleware\CheckLogin::class,
             'admin.only'       => \App\Http\Middleware\AdminOnly::class,
@@ -26,18 +26,15 @@ return Application::configure(basePath: dirname(__DIR__))
             'chatbot.throttle' => \App\Http\Middleware\ChatbotRateLimiter::class,
         ]);
 
-        // ── Trust Proxies — wajib untuk ngrok / reverse proxy ────────────
-        // Ngrok bertindak sebagai reverse proxy; tanpa ini Laravel salah baca
-        // IP, scheme (https), dan host — bisa menyebabkan request gagal.
+        // Trust proxies untuk reverse proxy / ngrok
         $middleware->trustProxies(at: '*');
 
-        // ── Security Headers — diterapkan pada SEMUA web response ────────
+        // Security headers pada semua respon web
         $middleware->web(append: [
             \App\Http\Middleware\SecurityHeaders::class,
         ]);
 
-        // ── Chatbot: CSRF dikecualikan tapi diganti dengan rate limiter ──
-        // (Chatbot route tetap bebas CSRF karena diakses via JavaScript fetch)
+        // Pengecualian CSRF untuk endpoint chatbot API
         $middleware->validateCsrfTokens(except: [
             'chatbot/ask',
         ]);

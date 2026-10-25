@@ -1,6 +1,6 @@
 @extends('layouts.sidebar')
 
-@section('title', 'Edit Biodata Santri — ' . $santri->nama)
+@section('title', 'Edit Biodata Santri: ' . $santri->nama)
 
 @section('breadcrumb')
     <a href="{{ route('santri.index') }}" class="hover:text-blue-900 transition">Biodata Santri</a>

@@ -1,6 +1,6 @@
 @extends('layouts.sidebar')
 
-@section('title', 'Edit User — Yayasan Cahaya Amanah Ar-Raudhah')
+@section('title', 'Edit User | Yayasan Cahaya Amanah Ar-Raudhah')
 
 @section('breadcrumb')
     <a href="{{ route('users.index') }}" class="hover:text-blue-900 font-semibold text-slate-500">Kelola Pengguna</a>

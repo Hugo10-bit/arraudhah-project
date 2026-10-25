@@ -11,8 +11,6 @@ use Symfony\Component\HttpFoundation\Response;
  * Chatbot Rate Limiter Middleware
  * Membatasi request ke endpoint chatbot maksimal 20 kali per menit per IP
  * untuk mencegah penyalahgunaan (abuse/spam) pada API chatbot publik.
- *
- * @author Hugo Putra Pratama — Yayasan Cahaya Amanah Ar-Raudhah
  */
 class ChatbotRateLimiter
 {

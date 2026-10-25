@@ -1,6 +1,6 @@
 @extends('layouts.sidebar')
 
-@section('title', 'Tambah Biodata Santri — Yayasan Cahaya Amanah Ar-Raudhah')
+@section('title', 'Tambah Biodata Santri | Yayasan Cahaya Amanah Ar-Raudhah')
 
 @section('breadcrumb')
     <a href="{{ route('santri.index') }}" class="hover:text-blue-900 transition">Biodata Santri</a>

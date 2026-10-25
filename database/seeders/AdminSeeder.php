@@ -21,7 +21,7 @@ class AdminSeeder extends Seeder
         $adminUsername = $adminConfig['username'] ?? env('ADMIN_USERNAME', 'admin');
         $adminName     = $adminConfig['name'] ?? env('ADMIN_NAME', 'Admin Ar-Raudhah');
         $adminEmail    = $adminConfig['email'] ?? env('ADMIN_EMAIL', $adminUsername . '@arraudhah.id');
-        $adminPassword = $adminConfig['password'] ?? env('ADMIN_PASSWORD');
+        $adminPassword = $adminConfig['password'] ?? env('ADMIN_PASSWORD', 'Admin_ArRaudhah#2026');
 
         $admin = User::where('username', $adminUsername)
             ->orWhere('email', $adminEmail)

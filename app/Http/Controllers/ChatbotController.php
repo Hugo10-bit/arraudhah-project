@@ -172,12 +172,12 @@ class ChatbotController extends Controller
         $geminiKey = env('GEMINI_API_KEY');
         $openaiKey = env('OPENAI_API_KEY');
 
-        $systemInstruction = "Kamu adalah Asisten Cerdas Resmi 'Yayasan Cahaya Amanah Ar-Raudhah' (disingkat RTQ/TPQ) di Banjarbaru, Kalimantan Selatan. "
-            . "Sistem Penilaian & Munaqasyah ini dikembangkan oleh Software Engineer bernama Hugo Putra Pratama. "
-            . "Tugasmu adalah menjawab SEMUA pertanyaan pengguna—termasuk tentang sistem ini, santri, agama Islam, pengetahuan umum, sains, matematika, teknologi, sejarah, dan topik lainnya—"
+        $systemInstruction = "Kamu adalah Asisten Layanan Informasi Yayasan Cahaya Amanah Ar-Raudhah (TPQ dan RTQ) di Banjarbaru, Kalimantan Selatan. "
+            . "Sistem Penilaian dan Database Sekolah ini dikelola resmi untuk standardisasi penilaian santri TPQ dan RTQ. "
+            . "Tugasmu adalah menjawab pertanyaan pengguna seputar sistem ini, santri, agama Islam, pengetahuan umum, sains, matematika, teknologi, dan topik lainnya, "
             . "dengan ramah, santun, akurat, informatif, dan mudah dipahami dalam Bahasa Indonesia. "
-            . "Jika pertanyaan terkait sistem ini, berikan panduan yang jelas. Gunakan bullet points atau format terstruktur jika membantu kejelasan jawaban. "
-            . "Jangan pernah menolak menjawab pertanyaan yang wajar dan tidak melanggar etika.";
+            . "Jika pertanyaan terkait sistem ini, berikan panduan yang jelas dan terstruktur. "
+            . "Jangan pernah menolak menjawab pertanyaan yang wajar dan etis.";
 
         if ($geminiKey) {
             $text = $this->callGeminiCurl($geminiKey, $message, $systemInstruction);
@@ -338,17 +338,17 @@ class ChatbotController extends Controller
         if (preg_match('/(kamu siapa|siapa kamu|siapa namamu|namamu siapa|nama kamu siapa|tentang kamu|profil kamu|identitas kamu|kamu apa)/i', $q)) {
             return "
                 <div class='space-y-2 text-xs'>
-                    <div class='p-3 rounded-2xl bg-gradient-to-r from-blue-950 to-[#1E3A8A] text-white flex items-center gap-3'>
+                    <div class='p-3 rounded-2xl bg-[#081026] border border-blue-900/50 text-white flex items-center gap-3'>
                         <div class='w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-xl shrink-0'>
-                            🤖
+                            <i class='fa-solid fa-headset text-amber-300'></i>
                         </div>
                         <div>
-                            <h4 class='font-black text-sm text-white'>Asisten Cerdas Virtual Ar-Raudhah</h4>
+                            <h4 class='font-black text-sm text-white'>Asisten Layanan Informasi Ar-Raudhah</h4>
                             <p class='text-[10px] text-blue-200'>Yayasan Cahaya Amanah Banjarbaru</p>
                         </div>
                     </div>
                     <p class='text-slate-700 leading-relaxed'>
-                        Saya adalah asisten AI interaktif yang dikembangkan oleh <strong>Hugo Putra Pratama</strong> untuk membantu panitia munaqasyah, dewan asatidz, dan wali santri.
+                        Saya adalah asisten informasi resmi Yayasan Cahaya Amanah Ar-Raudhah untuk membantu panitia database sekolah, penguji, dan wali santri.
                     </p>
                     <div class='p-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 space-y-1'>
                         <p class='font-bold text-slate-900'>Kemampuan Utama Saya:</p>
@@ -396,8 +396,8 @@ class ChatbotController extends Controller
                             <p class='font-bold text-amber-950'>🕌 Jadwal Sholat &amp; Doa</p>
                             <p class='text-[11px] text-slate-600 mt-0.5'>Ketik <em>\"jadwal sholat\"</em> atau <em>\"doa orang tua\"</em> untuk waktu sholat Banjarbaru.</p>
                         </div>
-                        <div class='p-2 rounded-xl bg-purple-50 border border-purple-200'>
-                            <p class='font-bold text-purple-950'>⚙️ Panduan Sistem</p>
+                        <div class='p-2 rounded-xl bg-slate-50 border border-slate-200'>
+                            <p class='font-bold text-slate-800'>⚙️ Panduan Sistem</p>
                             <p class='text-[11px] text-slate-600 mt-0.5'>Tanyakan <em>\"cara cetak surat\"</em>, <em>\"cara input nilai\"</em>, atau <em>\"cara export excel\"</em>.</p>
                         </div>
                     </div>
@@ -805,7 +805,7 @@ class ChatbotController extends Controller
 
         return "
             <div class='space-y-2 text-xs'>
-                <div class='p-3 rounded-2xl bg-gradient-to-r from-slate-900 to-blue-950 text-white flex items-center gap-3 shadow-md'>
+                <div class='p-3 rounded-2xl bg-[#081026] border border-slate-800 text-white flex items-center gap-3 shadow-sm'>
                     <img src='{$fotoUrl}' alt='{$s->nama}' class='w-12 h-14 object-cover rounded-xl border border-white/30 shrink-0'>
                     <div class='min-w-0 flex-1'>
                         <div class='flex items-center gap-1.5'>
@@ -850,7 +850,7 @@ class ChatbotController extends Controller
 
             $list = "";
             foreach ($unrated as $u) {
-                $list .= "<li><strong>{$u->nama}</strong> ({$u->jenis} - {$u->nama_unit}) — No: {$u->no_peserta}</li>";
+                $list .= "<li><strong>{$u->nama}</strong> ({$u->jenis} - {$u->nama_unit}) · No: {$u->no_peserta}</li>";
             }
 
             return "
@@ -884,7 +884,7 @@ class ChatbotController extends Controller
             $list = "";
             foreach ($failed as $f) {
                 $rata = $f->penilaian ? number_format($f->penilaian->rata_rata, 1) : '-';
-                $list .= "<li><strong>{$f->nama}</strong> ({$f->jenis}) — Rata-rata: {$rata}</li>";
+                $list .= "<li><strong>{$f->nama}</strong> ({$f->jenis}) · Rata-rata: {$rata}</li>";
             }
 
             return "
@@ -906,7 +906,7 @@ class ChatbotController extends Controller
             $list = "";
             foreach ($units as $u) {
                 $count = Santri::where('nama_unit', $u->nama_unit)->count();
-                $list .= "<li>🏢 <strong>{$u->nama_unit}</strong> ({$u->jenis}) — <strong>{$count}</strong> Santri</li>";
+                $list .= "<li>🏢 <strong>{$u->nama_unit}</strong> ({$u->jenis}) · <strong>{$count}</strong> Santri</li>";
             }
 
             return "
@@ -944,9 +944,9 @@ class ChatbotController extends Controller
                             <span class='text-slate-500 text-[10px] block'>Dinyatakan Lulus</span>
                             <span class='text-sm font-black text-emerald-800'>{$totalLulus} Santri</span>
                         </div>
-                        <div class='p-2 rounded-xl bg-purple-50 border border-purple-200'>
+                        <div class='p-2 rounded-xl bg-slate-50 border border-slate-200'>
                             <span class='text-slate-500 text-[10px] block'>TPQ &amp; RTQ</span>
-                            <span class='text-xs font-bold text-purple-900'>TPQ: {$totalTPQ} | RTQ: {$totalRTQ}</span>
+                            <span class='text-xs font-bold text-slate-800'>TPQ: {$totalTPQ} | RTQ: {$totalRTQ}</span>
                         </div>
                         <div class='p-2 rounded-xl bg-amber-50 border border-amber-200'>
                             <span class='text-slate-500 text-[10px] block'>Santri L / P</span>
@@ -1123,7 +1123,7 @@ class ChatbotController extends Controller
 
                         return "
                             <div class='space-y-2 text-xs'>
-                                <div class='p-3 rounded-2xl bg-gradient-to-r from-emerald-800 to-teal-900 text-white flex items-center justify-between shadow-sm'>
+                                <div class='p-3 rounded-2xl bg-[#064e3b] border border-emerald-700/40 text-white flex items-center justify-between shadow-xs'>
                                     <div>
                                         <div class='flex items-center gap-2'>
                                             <span class='text-sm font-black'>{$namaLatin}</span>
@@ -1174,7 +1174,7 @@ class ChatbotController extends Controller
 
             return "
                 <div class='space-y-2 text-xs'>
-                    <div class='p-2.5 rounded-xl bg-gradient-to-r from-blue-900 to-indigo-900 text-white flex items-center justify-between'>
+                    <div class='p-2.5 rounded-xl bg-[#081026] border border-blue-900/40 text-white flex items-center justify-between'>
                         <div>
                             <p class='font-bold text-xs'>🕌 Jadwal Sholat Wilayah Banjarbaru & Sekitarnya</p>
                             <p class='text-[10px] text-blue-200 mt-0.5'>WITA (GMT+8) • Tanggal: {$today}</p>
@@ -1202,9 +1202,9 @@ class ChatbotController extends Controller
                             <span class='text-[10px] text-rose-700 font-sans block'>Maghrib</span>
                             <span class='font-black text-rose-900 text-xs'>18:28</span>
                         </div>
-                        <div class='p-1.5 bg-indigo-50 border border-indigo-200 rounded-xl'>
-                            <span class='text-[10px] text-indigo-700 font-sans block'>Isya</span>
-                            <span class='font-black text-indigo-900 text-xs'>19:37</span>
+                        <div class='p-1.5 bg-slate-100 border border-slate-200 rounded-xl'>
+                            <span class='text-[10px] text-slate-600 font-sans block'>Isya</span>
+                            <span class='font-black text-slate-800 text-xs'>19:37</span>
                         </div>
                     </div>
                     <p class='text-[10px] text-slate-500 text-center'>Waktu disesuaikan dengan koordinat Kota Banjarbaru, Kalimantan Selatan.</p>
@@ -1369,26 +1369,26 @@ class ChatbotController extends Controller
     {
         $q = strtolower($message);
 
-        // 1. Pembuat / Developer Hugo Putra Pratama
-        if (preg_match('/(pembuat|hugo|putra|pratama|developer|creator|siapa yang bikin|siapa yang buat|bikin|dibuat oleh|pengembang)/i', $q)) {
+        // 1. Informasi Sistem & Pengelola
+        if (preg_match('/(pembuat|hugo|putra|pratama|developer|creator|siapa yang bikin|siapa yang buat|bikin|dibuat oleh|pengembang|pengelola|tentang sistem)/i', $q)) {
             return "
                 <div class='space-y-2 text-xs'>
-                    <div class='p-3 rounded-2xl bg-gradient-to-r from-red-50 via-rose-50 to-blue-50 border border-red-200'>
+                    <div class='p-3 rounded-2xl bg-slate-50 border border-slate-200'>
                         <p class='font-black text-slate-900 text-sm flex items-center gap-1.5'>
-                            👨‍💻 <span>Hugo Putra Pratama</span>
+                            🏛️ <span>Yayasan Cahaya Amanah Ar-Raudhah</span>
                         </p>
-                        <p class='text-[11px] text-red-700 font-bold mt-0.5'>Software Engineer &amp; Full-Stack Architect</p>
+                        <p class='text-[11px] text-[#1e3a8a] font-bold mt-0.5'>Sistem Manajemen Database &amp; Penilaian Munaqasyah</p>
                     </div>
                     <p class='text-slate-700 leading-relaxed'>
-                        Sistem Penilaian &amp; Munaqasyah ini <strong>diciptakan dan dikembangkan secara eksklusif oleh Hugo Putra Pratama</strong> untuk mendigitalisasi proses ujian dan penerbitan kelulusan di <strong>Yayasan Cahaya Amanah Ar-Raudhah Banjarbaru</strong>.
+                        Sistem Penilaian &amp; Munaqasyah ini <strong>dikelola dan dioperasikan secara resmi</strong> untuk mendigitalisasi proses ujian dan penerbitan kelulusan santri di <strong>Yayasan Cahaya Amanah Ar-Raudhah Banjarbaru</strong>.
                     </p>
                     <div class='bg-white p-2.5 rounded-xl border border-slate-200 space-y-1 text-[11px] text-slate-600'>
-                        <p class='font-bold text-slate-900'>Teknologi yang Digunakan:</p>
+                        <p class='font-bold text-slate-900'>Fitur &amp; Kemampuan Sistem:</p>
                         <ul class='list-disc list-inside space-y-0.5 pl-1'>
-                            <li>Laravel 12 (PHP 8.2+) dengan arsitektur modular</li>
-                            <li>Tailwind CSS &amp; Glassmorphism UI/UX Elegan</li>
-                            <li>Fitur QR Code Verifikasi, Direct WhatsApp Share &amp; Export Excel/CSV</li>
-                            <li>Chatbot Cerdas Real-Time dengan Voice &amp; Quran Engine</li>
+                            <li>Standarisasi 9 Mata Uji Munaqasyah Santri TPQ dan RTQ</li>
+                            <li>Kalkulasi Otomatis Nilai, Kriteria Kelulusan &amp; Predikat</li>
+                            <li>Verifikasi Keabsahan Surat dengan QR Code &amp; Cetak Massal</li>
+                            <li>Portal Mandiri Cek Kelulusan Santri bagi Wali Santri</li>
                         </ul>
                     </div>
                 </div>
@@ -1401,17 +1401,17 @@ class ChatbotController extends Controller
                 <div class='space-y-2 text-xs'>
                     <p class='font-bold text-slate-900'>📖 9 Mata Uji Standar Munaqasyah Ar-Raudhah:</p>
                     <ol class='list-decimal list-inside space-y-1.5 text-slate-700 pl-1'>
-                        <li><strong>Fashohah</strong> — Ketepatan pelafalan dan kelancaran membaca Al-Qur'an.</li>
-                        <li><strong>Tajwid</strong> — Penguasaan hukum-hukum tajwid (Mad, Nun Sukun, dll).</li>
-                        <li><strong>Gharib &amp; Musykilat</strong> — Penguasaan ayat-ayat unik (Imalah, Isymam, dll).</li>
-                        <li><strong>Suara &amp; Lagu</strong> — Irama tartil yang indah dan penghayatan ayat.</li>
-                        <li><strong>Ayat Pilihan</strong> — Ujian kelancaran membaca ayat-ayat pilihan.</li>
-                        <li><strong>Surah Pendek</strong> — Hafalan surah-surah dalam Juz 30 (Juz 'Amma).</li>
-                        <li><strong>Doa Harian</strong> — Hafalan dan pemahaman doa-doa praktis sehari-hari.</li>
-                        <li><strong>Bacaan Shalat</strong> — Hafalan bacaan shalat wajib dan sunnah.</li>
-                        <li><strong>Ujian Tertulis</strong> — Teori tajwid dan pengetahuan dasar Dinul Islam.</li>
+                        <li><strong>Fashohah</strong>: Ketepatan pelafalan dan kelancaran membaca Al-Qur'an.</li>
+                        <li><strong>Tajwid</strong>: Penguasaan hukum-hukum tajwid (Mad, Nun Sukun, dll).</li>
+                        <li><strong>Gharib &amp; Musykilat</strong>: Penguasaan ayat-ayat unik (Imalah, Isymam, dll).</li>
+                        <li><strong>Suara &amp; Lagu</strong>: Irama tartil yang indah dan penghayatan ayat.</li>
+                        <li><strong>Ayat Pilihan</strong>: Ujian kelancaran membaca ayat-ayat pilihan.</li>
+                        <li><strong>Surah Pendek</strong>: Hafalan surah-surah dalam Juz 30 (Juz 'Amma).</li>
+                        <li><strong>Doa Harian</strong>: Hafalan dan pemahaman doa-doa praktis sehari-hari.</li>
+                        <li><strong>Bacaan Shalat</strong>: Hafalan bacaan shalat wajib dan sunnah.</li>
+                        <li><strong>Ujian Tertulis</strong>: Teori tajwid dan pengetahuan dasar Dinul Islam.</li>
                     </ol>
-                    <p class='text-[10px] text-slate-500'>Masing-masing komponen berbobot seimbang dan dikalkulasi otomatis oleh sistem karya Hugo Putra Pratama.</p>
+                    <p class='text-[10px] text-slate-500'>Masing-masing komponen berbobot seimbang dan dikalkulasi otomatis oleh sistem.</p>
                 </div>
             ";
         }
@@ -1431,7 +1431,7 @@ class ChatbotController extends Controller
                         <div class='p-2 rounded-xl bg-teal-50 border border-teal-200'>
                             <strong>3. Idgham Bilaghunnah:</strong> Melebur tanpa dengung. Hurufnya ada 2: <em>Lam (ل), Ra (ر)</em>.
                         </div>
-                        <div class='p-2 rounded-xl bg-purple-50 border border-purple-200'>
+                        <div class='p-2 rounded-xl bg-slate-50 border border-slate-200'>
                             <strong>4. Iqlab:</strong> Mengganti bunyi nun sukun menjadi mim disertai dengung jika bertemu huruf <em>Ba (ب)</em>.
                         </div>
                         <div class='p-2 rounded-xl bg-amber-50 border border-amber-200'>
@@ -1505,7 +1505,7 @@ class ChatbotController extends Controller
                 <div class='space-y-1.5 text-xs'>
                     <p class='font-bold text-slate-900'>Wa'alaikumussalam Warahmatullahi Wabarakatuh! 👋</p>
                     <p class='text-slate-700 leading-relaxed'>
-                        Senang sekali bisa menyapa Anda! Saya adalah <strong>Asisten Cerdas Yayasan Cahaya Amanah Ar-Raudhah</strong> yang dikembangkan oleh <strong>Hugo Putra Pratama</strong>.
+                        Senang sekali bisa menyapa Anda! Saya adalah <strong>Asisten Layanan Informasi Yayasan Cahaya Amanah Ar-Raudhah</strong>.
                     </p>
                     <p class='text-slate-600'>
                         Ada yang bisa saya bantu hari ini? Anda bisa menanyakan nama santri, jadwal sholat, ayat Al-Qur'an, kalkulator, tajwid, hingga pengetahuan umum! 😊

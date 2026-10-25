@@ -9,10 +9,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 
 /**
- * AuthController — Diperkuat dengan session regeneration,
- * penghapusan backdoor hardcoded, dan audit logging login.
- *
- * @author Hugo Putra Pratama — Yayasan Cahaya Amanah Ar-Raudhah
+ * Controller autentikasi panitia dan penguji.
  */
 class AuthController extends Controller
 {
@@ -43,15 +40,14 @@ class AuthController extends Controller
         $password = $request->input('password');
         $ip       = $request->ip();
 
-        // ─── Autentikasi dari Database ──────────────────────────────────
+        // Autentikasi dari database
         $user = User::where('username', $username)
                     ->orWhere('email', $username)
                     ->first();
 
         if ($user && Hash::check($password, $user->password)) {
 
-            // ✅ KEAMANAN: Regenerate session ID setelah login berhasil
-            // Mencegah session fixation attack
+            // Regenerate session ID untuk mencegah session fixation
             Session::regenerate();
 
             session([
@@ -68,15 +64,14 @@ class AuthController extends Controller
                 config(['session.lifetime' => 60 * 24 * 7]); // 7 hari
             }
 
-            // 📋 Audit log — login berhasil
+            // Audit log login berhasil
             Log::info("LOGIN BERHASIL: user={$user->username} role={$user->role} ip={$ip}");
 
             return redirect()->route('dashboard')
                 ->with('success', 'Selamat datang, ' . ($user->name ?? $user->username) . '!');
         }
 
-        // ─── Login Gagal ─────────────────────────────────────────────────
-        // 📋 Audit log — percobaan login gagal
+        // Audit log percobaan login gagal
         Log::warning("LOGIN GAGAL: username={$username} ip={$ip}");
 
         return back()
@@ -89,10 +84,10 @@ class AuthController extends Controller
         $userName = session('user_name', 'unknown');
         $ip       = $request->ip();
 
-        // 📋 Audit log — logout
+        // Audit log logout
         Log::info("LOGOUT: user={$userName} ip={$ip}");
 
-        // ✅ KEAMANAN: Flush & invalidate seluruh session dan regenerate token CSRF
+        // Flush dan invalidate seluruh session serta regenerate token CSRF
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Panitia — Database Sekolah Ar-Raudhah</title>
+    <title>Login Panitia | Database Sekolah Ar-Raudhah</title>
     <meta name="description" content="Halaman login panitia dan penguji database sekolah Yayasan Cahaya Amanah Ar-Raudhah Banjarbaru.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +21,7 @@
             height: 100%;
             min-height: 100vh;
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background: #070d1e;
+            background: #081026;
             color: #0f172a;
             overflow-x: hidden;
         }
@@ -39,7 +39,7 @@
         /* ===== LEFT BRANDING PANEL (FULL HEIGHT HERO) ===== */
         .login-left {
             flex: 1.15;
-            background: linear-gradient(135deg, #060c1d 0%, #0d1a3a 35%, #152a5c 70%, #0a1226 100%);
+            background: linear-gradient(145deg, #081026 0%, #0d1733 50%, #11224d 100%);
             padding: 56px 64px;
             display: flex;
             flex-direction: column;
@@ -54,34 +54,9 @@
             content: '';
             position: absolute;
             inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04' fill-rule='evenodd'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.035' fill-rule='evenodd'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             pointer-events: none;
             z-index: 1;
-        }
-
-        /* Ambient Glowing Auras */
-        .glow-orb-1 {
-            position: absolute;
-            top: -10%;
-            left: -10%;
-            width: 450px;
-            height: 450px;
-            background: radial-gradient(circle, rgba(37, 99, 235, 0.3) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            filter: blur(40px);
-        }
-
-        .glow-orb-2 {
-            position: absolute;
-            bottom: -15%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(217, 119, 6, 0.18) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            filter: blur(50px);
         }
 
         .left-content-wrapper {
@@ -587,9 +562,6 @@
 
     <!-- ===== LEFT BRANDING PANEL (HERO) ===== -->
     <div class="login-left">
-        <div class="glow-orb-1"></div>
-        <div class="glow-orb-2"></div>
-
         <div class="left-content-wrapper">
             <!-- Brand Header -->
             <div class="brand-header">
@@ -642,8 +614,7 @@
                     </span>
                 </div>
                 <p class="copyright-text">
-                    &copy; 2026 Yayasan Cahaya Amanah Ar-Raudhah • Banjarbaru<br>
-                    Diciptakan &amp; Dikembangkan oleh <strong style="color:#cbd5e1;">Hugo Putra Pratama</strong>
+                    &copy; 2026 Yayasan Cahaya Amanah Ar-Raudhah • Banjarbaru
                 </p>
             </div>
         </div>

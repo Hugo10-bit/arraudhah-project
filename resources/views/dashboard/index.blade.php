@@ -1,6 +1,6 @@
 @extends('layouts.sidebar')
 
-@section('title', 'Dashboard — Yayasan Cahaya Amanah Ar-Raudhah')
+@section('title', 'Dashboard | Yayasan Cahaya Amanah Ar-Raudhah')
 
 @section('breadcrumb')
     <span class="text-blue-950 font-bold">Dashboard</span>
@@ -508,7 +508,7 @@
                         @elseif($santri->status_kelulusan == 'TIDAK LULUS')
                             <span class="text-[10px] font-bold text-rose-600">✗ TDK LULUS</span>
                         @else
-                            <span class="text-[10px] font-bold text-slate-400">— Belum dinilai</span>
+                            <span class="text-[10px] font-bold text-slate-400">Belum dinilai</span>
                         @endif
                     </div>
                 </div>

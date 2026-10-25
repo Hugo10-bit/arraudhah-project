@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Yayasan Cahaya Amanah Ar-Raudhah — Database Sekolah')</title>
+    <title>@yield('title', 'Yayasan Cahaya Amanah Ar-Raudhah | Database Sekolah')</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
@@ -596,7 +596,6 @@
                 <div class="sidebar-label px-2 transition-all duration-300 overflow-hidden">
                     <p class="text-[10px] text-slate-700 dark:text-slate-300 font-bold uppercase tracking-wider">AR-RAUDHAH</p>
                     <p class="text-[9px] text-slate-400 dark:text-slate-500 mt-0.5">&copy; 2026 Yayasan Cahaya Amanah</p>
-                    <p class="text-[8.5px] text-slate-400 dark:text-slate-500 mt-1">Diciptakan &amp; Dikembangkan oleh <span class="text-blue-600 dark:text-blue-400 font-bold">Hugo Putra Pratama</span></p>
                 </div>
             </div>
         </aside>
@@ -791,7 +790,7 @@
                     <span>&copy; 2026 <strong class="text-slate-700 font-semibold">Yayasan Cahaya Amanah Ar-Raudhah</strong> • Banjarbaru, Kalimantan Selatan</span>
                 </div>
                 <div class="text-[11px] text-slate-400 text-center sm:text-right">
-                    Diciptakan &amp; Dikembangkan oleh <span class="text-blue-600 dark:text-blue-400 font-bold">Hugo Putra Pratama</span>
+                    Sistem Manajemen Database &amp; Penilaian Munaqasyah
                 </div>
             </footer>
         </div>
@@ -1040,7 +1039,7 @@
     {{-- Universal Student Delete Confirmation Modal --}}
     @include('partials.modal_delete_santri')
 
-    {{-- Floating FAQ Chatbot Widget (Created by Hugo Putra Pratama) --}}
+    {{-- Floating FAQ Chatbot Widget --}}
     @include('partials.chatbot')
 </body>
 </html>

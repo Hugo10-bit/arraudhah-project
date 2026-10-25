@@ -1,6 +1,6 @@
 @extends('layouts.sidebar')
 
-@section('title', 'Direktori Biodata Santri — Yayasan Cahaya Amanah Ar-Raudhah')
+@section('title', 'Direktori Biodata Santri | Yayasan Cahaya Amanah Ar-Raudhah')
 
 @section('breadcrumb')
     <a href="{{ route('dashboard') }}" class="hover:text-blue-900 transition">Dashboard</a>

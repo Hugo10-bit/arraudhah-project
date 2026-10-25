@@ -1,6 +1,6 @@
 @extends('layouts.sidebar')
 
-@section('title', 'Import Data Nilai Database Sekolah ' . $jenis . ' — Ar-Raudhah')
+@section('title', 'Import Data Nilai Database Sekolah ' . $jenis . ' | Ar-Raudhah')
 
 @section('breadcrumb')
     <a href="{{ route('database_sekolah.index', ['jenis' => $jenis]) }}" class="hover:underline">Database Sekolah {{ $jenis }}</a>

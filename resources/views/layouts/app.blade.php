@@ -317,7 +317,7 @@
             <span>&copy; 2026 <strong class="text-slate-700 font-semibold">Yayasan Cahaya Amanah Ar-Raudhah</strong> • Banjarbaru, Kalimantan Selatan</span>
         </div>
         <div class="text-[11px] text-slate-400 text-center sm:text-right">
-            Diciptakan &amp; Dikembangkan oleh <span class="text-blue-600 font-bold">Hugo Putra Pratama</span>
+            Sistem Manajemen Database &amp; Penilaian Munaqasyah
         </div>
     </footer>
 

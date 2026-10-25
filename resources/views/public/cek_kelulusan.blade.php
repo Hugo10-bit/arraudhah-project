@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Cek Kelulusan Santri — Yayasan Cahaya Amanah Ar-Raudhah</title>
+    <title>Portal Cek Kelulusan Santri | Yayasan Cahaya Amanah Ar-Raudhah</title>
     <meta name="description" content="Portal mandiri pengecekan kelulusan dan nilai database sekolah santri TPQ & RTQ Ar-Raudhah Yayasan Cahaya Amanah Ar-Raudhah Banjarbaru.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -136,7 +136,7 @@
                                 <div>
                                     <p class="text-[10px] uppercase font-bold tracking-widest text-white/80">Hasil Database Sekolah 2026</p>
                                     <h3 class="text-lg font-black tracking-tight">
-                                        {{ $isLulus ? 'ALHAMDULILLAH — DINYATAKAN LULUS' : 'DINYATAKAN BELUM LULUS (PERBAIKAN)' }}
+                                        {{ $isLulus ? 'ALHAMDULILLAH, DINYATAKAN LULUS' : 'DINYATAKAN BELUM LULUS (PERBAIKAN)' }}
                                     </h3>
                                 </div>
                             </div>
@@ -293,7 +293,7 @@
             <span class="text-blue-400 text-xs font-medium">TPQ &amp; RTQ Ar-Raudhah Banjarbaru, Kalimantan Selatan</span>
         </div>
         <p class="text-[11px] text-slate-500">
-            Diciptakan &amp; Dikembangkan oleh <strong class="text-amber-400 font-semibold">Hugo Putra Pratama</strong>
+            Sistem Informasi Kelulusan &amp; Database Santri • Seluruh hak cipta dilindungi.
         </p>
     </footer>
 
